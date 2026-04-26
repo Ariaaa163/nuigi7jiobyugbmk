@@ -1,0 +1,179 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-display: "General Sans";
+    --font-body: "DM Sans";
+    --font-mono: "Geist Mono";
+    --radius: 0.625rem;
+
+    --background: 0.98 0.01 0;
+    --foreground: 0.15 0.02 0;
+    --card: 0.96 0.02 0;
+    --card-foreground: 0.15 0.02 0;
+    --popover: 0.98 0.01 0;
+    --popover-foreground: 0.15 0.02 0;
+
+    --primary: 0.42 0.23 264;
+    --primary-foreground: 0.98 0.01 0;
+
+    --secondary: 0.7 0.21 86;
+    --secondary-foreground: 0.12 0.01 264;
+    --muted: 0.92 0.02 0;
+    --muted-foreground: 0.45 0.03 0;
+
+    --accent: 0.7 0.21 86;
+    --accent-foreground: 0.12 0.01 264;
+
+    --destructive: 0.6 0.25 22;
+    --destructive-foreground: 0.98 0.01 0;
+
+    --border: 0.88 0.02 264;
+    --input: 0.92 0.02 264;
+    --ring: 0.42 0.23 264;
+
+    --chart-1: 0.7 0.21 86;
+    --chart-2: 0.42 0.23 264;
+    --chart-3: 0.55 0.18 45;
+    --chart-4: 0.65 0.2 120;
+    --chart-5: 0.5 0.22 180;
+
+    --sidebar: 0.98 0.01 0;
+    --sidebar-foreground: 0.15 0.02 0;
+    --sidebar-primary: 0.42 0.23 264;
+    --sidebar-primary-foreground: 0.98 0.01 0;
+    --sidebar-accent: 0.7 0.21 86;
+    --sidebar-accent-foreground: 0.12 0.01 264;
+    --sidebar-border: 0.88 0.02 264;
+    --sidebar-ring: 0.42 0.23 264;
+
+    --gradient-primary: linear-gradient(
+      135deg,
+      oklch(0.7 0.21 86),
+      oklch(0.6 0.18 70)
+    );
+    --gradient-subtle: linear-gradient(
+      135deg,
+      oklch(0.42 0.23 264 / 0.05),
+      oklch(0.7 0.21 86 / 0.05)
+    );
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dark {
+    --background: 0.12 0.01 264;
+    --foreground: 0.95 0.01 0;
+    --card: 0.18 0.02 264;
+    --card-foreground: 0.95 0.01 0;
+    --popover: 0.22 0.02 264;
+    --popover-foreground: 0.95 0.01 0;
+
+    --primary: 0.7 0.21 86;
+    --primary-foreground: 0.12 0.01 264;
+
+    --secondary: 0.28 0.03 264;
+    --secondary-foreground: 0.88 0.02 0;
+    --muted: 0.22 0.02 264;
+    --muted-foreground: 0.6 0.02 0;
+
+    --accent: 0.7 0.21 86;
+    --accent-foreground: 0.12 0.01 264;
+
+    --destructive: 0.65 0.24 22;
+    --destructive-foreground: 0.95 0.01 0;
+
+    --border: 0.25 0.02 264;
+    --input: 0.22 0.02 264;
+    --ring: 0.7 0.21 86;
+
+    --chart-1: 0.7 0.21 86;
+    --chart-2: 0.8 0.18 45;
+    --chart-3: 0.6 0.2 120;
+    --chart-4: 0.75 0.22 180;
+    --chart-5: 0.55 0.23 25;
+
+    --sidebar: 0.18 0.02 264;
+    --sidebar-foreground: 0.95 0.01 0;
+    --sidebar-primary: 0.7 0.21 86;
+    --sidebar-primary-foreground: 0.12 0.01 264;
+    --sidebar-accent: 0.28 0.03 264;
+    --sidebar-accent-foreground: 0.88 0.02 0;
+    --sidebar-border: 0.25 0.02 264;
+    --sidebar-ring: 0.7 0.21 86;
+  }
+
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+}
+
+@font-face {
+  font-family: "General Sans";
+  src: url("/assets/fonts/GeneralSans.woff2") format("woff2");
+  font-weight: 400 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "DM Sans";
+  src: url("/assets/fonts/DMSans.woff2") format("woff2");
+  font-weight: 400 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Geist Mono";
+  src: url("/assets/fonts/GeistMono.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@layer utilities {
+  .transition-smooth {
+    @apply transition-all duration-300 ease-out;
+  }
+
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .gradient-subtle {
+    background: var(--gradient-subtle);
+  }
+
+  .button-gold {
+    @apply relative inline-flex items-center justify-center px-6 py-3 font-semibold text-sm rounded-lg overflow-hidden transition-all duration-300 cursor-pointer;
+    background: var(--gradient-primary);
+    color: oklch(var(--accent-foreground));
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
+  }
+
+  .button-gold:hover {
+    @apply -translate-y-1 shadow-lg;
+    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+  }
+
+  .glass-card {
+    @apply rounded-lg border backdrop-blur-md;
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.12);
+  }
+
+  .dark .glass-card {
+    background: rgba(30, 58, 138, 0.08);
+    border-color: rgba(212, 175, 55, 0.1);
+  }
+
+  .fade-in {
+    @apply opacity-0 animate-in fade-in-0 duration-700;
+  }
+
+  .fade-in-up {
+    @apply opacity-0 animate-in fade-in-0 slide-in-from-bottom-4 duration-700;
+  }
+}

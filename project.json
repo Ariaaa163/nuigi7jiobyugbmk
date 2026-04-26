@@ -1,0 +1,26 @@
+{
+  "overview": "Under 25 ADYPU is a premium youth community platform for students under 25, representing creativity, innovation, and collaboration. Features a bold, futuristic aesthetic with deep blue and gold branding, showcasing the community's events, projects, achievements, and student stories.",
+  "features": [
+    "Full-width hero with glowing gold logo and animated tagline",
+    "Sticky glassmorphism navigation with dark/light mode toggle",
+    "About Us, Community showcase, Events & Projects, Gallery sections",
+    "Registration form with backend data persistence",
+    "Testimonials section with glassmorphism styling",
+    "Gold gradient buttons with hover glow animations",
+    "Responsive mobile-first design",
+    "Blue tint gallery grid with gold accents",
+    "Smooth scrolling and parallax animations",
+    "Minimal footer with gold social icons"
+  ],
+  "category": "community",
+  "tags": [
+    "youth",
+    "community",
+    "university",
+    "innovation",
+    "landing-page",
+    "glassmorphism",
+    "dark-mode"
+  ],
+  "last_updated": "2026-04-23T17:18:26.482Z"
+}

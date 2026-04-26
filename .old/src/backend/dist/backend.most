@@ -1,0 +1,24 @@
+// Version: 1.0.0
+type Nat__490723111 = Nat__920180692;
+type Nat__920180692 = Nat;
+type RegistrationId__1015088101 = Nat;
+type Registration__715633958 =
+  {
+    email : Text;
+    id : RegistrationId__1015088101;
+    interests : Text;
+    message : Text;
+    name : Text;
+    phone : Text;
+    submittedAt : Int
+  };
+actor {
+  stable var nextRegistrationId : Nat;
+  stable nextRegistrationIdRef : {var val : Nat};
+  stable registrations :
+    {
+      var blockIndex : Nat__490723111;
+      var blocks : [var [var ?Registration__715633958]];
+      var elementIndex : Nat__490723111
+    }
+};

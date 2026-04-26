@@ -1,0 +1,28 @@
+type SubmitResult = 
+ variant {
+   err: text;
+   ok: RegistrationId;
+ };
+type RegistrationInput = 
+ record {
+   email: text;
+   interests: text;
+   message: text;
+   name: text;
+   phone: text;
+ };
+type RegistrationId = nat;
+type Registration = 
+ record {
+   email: text;
+   id: RegistrationId;
+   interests: text;
+   message: text;
+   name: text;
+   phone: text;
+   submittedAt: int;
+ };
+service : {
+  getRegistrations: () -> (vec Registration) query;
+  submitRegistration: (input: RegistrationInput) -> (SubmitResult);
+}
